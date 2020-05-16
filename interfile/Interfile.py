@@ -282,11 +282,11 @@ class LineParser:
             outlist: list of integers or float, depending on the content of the 'Interfile list'.
         """
         # delete bracers
-        table = str.maketrans(dict.fromkeys("{},"))
+        table = str.maketrans(dict.fromkeys("{}"))
         s = s.translate(table)
 
         outlist = []
-        for x in s.split():
+        for x in s.split(','):
             try:
                 outlist.append(int(x))
             except (TypeError, ValueError):
